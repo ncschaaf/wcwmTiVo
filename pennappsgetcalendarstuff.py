@@ -8,6 +8,9 @@ from oauth2client.tools import run
 
 #FLAGS = gflags.FLAGS
 
+
+print "creating flow"
+
 # Set up a Flow object to be used if we need to authenticate. This
 # sample uses OAuth 2.0, and we set up the OAuth2WebServerFlow with
 # the information it needs to authenticate. Note that it is called
@@ -19,6 +22,12 @@ FLOW = OAuth2WebServerFlow(
     client_secret='ofcK0vZF8hBvDN_K90euBmXy ',
     scope='https://www.googleapis.com/auth/calendar',
     user_agent='Test')
+
+
+
+print "flow created"
+
+
 
 # To disable the local server feature, uncomment the following line:
 # FLAGS.auth_local_webserver = False
@@ -44,7 +53,7 @@ print "creating SERVICE"
 # the Google Developers Console
 # to get a developerKey for your own application.
 service = build(serviceName='calendar', version='v3', http=http,
-       developerKey='AIzaSyD0p1ISHDSy7piqmuStR1oTWahrZWNV7U0')
+       developerKey='AIzaSyBWoWoYLrkaGHz2sVvtTCZw9Su1L4-zbjs')
 
 
 
