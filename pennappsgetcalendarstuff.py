@@ -19,7 +19,7 @@ print "creating flow"
 # The client_id and client_secret can be found in Google Developers Console
 FLOW = OAuth2WebServerFlow(
     client_id= '368112320923-94adjqlcu8e6us5o4bikd6tf0pimrvq0.apps.googleusercontent.com',
-    client_secret='ofcK0vZF8hBvDN_K90euBmXy ',
+    client_secret='ofcK0vZF8hBvDN_K90euBmXy',
     scope='https://www.googleapis.com/auth/calendar',
     user_agent='Test')
 
@@ -36,7 +36,11 @@ print "flow created"
 # flow. The Storage object will ensure that if successful the good
 # Credentials will get written back to a file.
 storage = Storage('calendar.dat')
+print "created storage"
 credentials = storage.get()
+print "got credentials"
+if credentials is None:
+  print "none creds"
 if credentials is None or credentials.invalid == True:
   credentials = run(FLOW, storage)
 
@@ -53,7 +57,7 @@ print "creating SERVICE"
 # the Google Developers Console
 # to get a developerKey for your own application.
 service = build(serviceName='calendar', version='v3', http=http,
-       developerKey='AIzaSyBWoWoYLrkaGHz2sVvtTCZw9Su1L4-zbjs')
+       developerKey='')#AIzaSyBWoWoYLrkaGHz2sVvtTCZw9Su1L4-zbjs')
 
 
 
