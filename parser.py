@@ -3,6 +3,7 @@
 import re
 import feedparser
 import string
+import subprocess
 
 BASE_URL = 'https://www.google.com/calendar/feeds/wcwm.wm@gmail.com/public/basic'
 INCLUDE_FUTURE = 'futureevents=true'
@@ -84,7 +85,9 @@ for entry in cal.entries:
         
 
         print fullbashcommand
-
+        proc = subprocess.Popen(["bash", "-c", fullbashcommand])
+        
+        
 
 
 
